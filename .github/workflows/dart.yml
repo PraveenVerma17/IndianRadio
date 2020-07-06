@@ -20,12 +20,10 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: '12.x'
-   # Setup the flutter environment.
-    - uses: subosito/flutter-action@v1
-      with:
-        flutter-version: '1.17.x'
     - name: Install dependencies
-      run: flutter pub get
+      uses: steebchen/flutter@v1.1.0
+      with:
+        args: pub get
     - name: Flutter formating 
       run: flutter format --set-exit-if-changed
     - name: Analyaze flutter code
